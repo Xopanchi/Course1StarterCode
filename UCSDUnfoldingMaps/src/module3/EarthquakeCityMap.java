@@ -8,7 +8,7 @@ import java.util.List;
 
 //Processing library
 import processing.core.PApplet;
-
+import processing.core.PShape;
 //Unfolding libraries
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.marker.Marker;
@@ -45,6 +45,9 @@ public class EarthquakeCityMap extends PApplet {
 	
 	// The map
 	private UnfoldingMap map;
+	
+	// The shape of key
+	private PShape square;
 	
 	//feed with magnitude 2.5+ Earthquakes
 	private String earthquakesURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.atom";
@@ -84,6 +87,7 @@ public class EarthquakeCityMap extends PApplet {
 	    
 	    // Add the markers to the map so that they are displayed
 	    map.addMarkers(markers);
+	    
 	}
 		
 	/* createMarker: A suggested helper method that takes in an earthquake 
@@ -152,6 +156,28 @@ public class EarthquakeCityMap extends PApplet {
 	private void addKey() 
 	{	
 		// Remember you can use Processing's graphics methods here
-	
+		fill(200, 200, 200);
+		rect(25, 50, 150, 250);
+		
+		//Title text
+		fill(0, 0, 0);
+		textSize(12);
+		text("Earthquake Key", 50, 80);
+		
+		//Elipses
+		fill(255, 0, 0);
+		ellipse(50, 125, 15, 15);
+		fill(255, 255, 0);
+		ellipse(50, 175, 10, 10);
+		fill(0, 0, 255);
+		ellipse(50, 225, 5, 5);
+		
+		//Legend text
+		fill(0, 0, 0);
+		text("5.0+ Magnitude", 75, 130);
+		text("4.0+ Magnitude", 75, 180);
+		text("Below 4.0", 75, 230);
+		
 	}
+	
 }
