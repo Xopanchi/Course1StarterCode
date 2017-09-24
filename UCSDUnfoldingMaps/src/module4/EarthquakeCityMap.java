@@ -111,7 +111,7 @@ public class EarthquakeCityMap extends PApplet {
 	    }
 
 	    // could be used for debugging
-	    printQuakes();
+	    //printQuakes();
 	 		
 	    // (3) Add markers to map
 	    //     NOTE: Country markers are not added to the map.  They are used
@@ -142,16 +142,20 @@ public class EarthquakeCityMap extends PApplet {
 		text("Earthquake Key", 50, 75);
 		
 		fill(color(255, 0, 0));
-		ellipse(50, 125, 15, 15);
-		fill(color(255, 255, 0));
-		ellipse(50, 175, 10, 10);
-		fill(color(0, 0, 255));
-		ellipse(50, 225, 5, 5);
+		int TRI_SIZE = 6;
+		int PLUS_MAG5_X_AXIS = 50;
+		int PLUS_MAG5_Y_AXIS = 125;
+		triangle(PLUS_MAG5_X_AXIS, PLUS_MAG5_Y_AXIS-TRI_SIZE, PLUS_MAG5_X_AXIS+TRI_SIZE, PLUS_MAG5_Y_AXIS+TRI_SIZE, PLUS_MAG5_X_AXIS-TRI_SIZE, PLUS_MAG5_Y_AXIS+TRI_SIZE);
 		
-		fill(0, 0, 0);
-		text("5.0+ Magnitude", 75, 125);
-		text("4.0+ Magnitude", 75, 175);
-		text("Below 4.0", 75, 225);
+//		fill(color(255, 255, 0));
+//		ellipse(50, 175, 10, 10);
+//		fill(color(0, 0, 255));
+//		ellipse(50, 225, 5, 5);
+//		
+//		fill(0, 0, 0);
+//		text("5.0+ Magnitude", 75, 125);
+//		text("4.0+ Magnitude", 75, 175);
+//		text("Below 4.0", 75, 225);
 	}
 
 	
