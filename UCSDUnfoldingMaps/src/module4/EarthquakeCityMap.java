@@ -144,18 +144,20 @@ public class EarthquakeCityMap extends PApplet {
 		fill(color(255, 0, 0));
 		int TRI_SIZE = 6;
 		int PLUS_MAG5_X_AXIS = 50;
-		int PLUS_MAG5_Y_AXIS = 125;
+		int PLUS_MAG5_Y_AXIS = 100;
 		triangle(PLUS_MAG5_X_AXIS, PLUS_MAG5_Y_AXIS-TRI_SIZE, PLUS_MAG5_X_AXIS+TRI_SIZE, PLUS_MAG5_Y_AXIS+TRI_SIZE, PLUS_MAG5_X_AXIS-TRI_SIZE, PLUS_MAG5_Y_AXIS+TRI_SIZE);
 		
-//		fill(color(255, 255, 0));
-//		ellipse(50, 175, 10, 10);
-//		fill(color(0, 0, 255));
-//		ellipse(50, 225, 5, 5);
-//		
+		fill(color(255, 255, 255));
+		ellipse(50, 125, 12, 12	);
+		
+		fill(color(255, 255, 255));
+		rect(45, 145, 10, 10);
+		
 		fill(0, 0, 0);
-		text("City Marker", 75, 125);
-//		text("4.0+ Magnitude", 75, 175);
-//		text("Below 4.0", 75, 225);
+		text("City Marker", 75, 100);
+		text("Land Quake", 75, 125);
+		text("Ocean Quake", 75, 150);
+		text("Size ~ Magnitude", 50, 175);
 	}
 
 	
