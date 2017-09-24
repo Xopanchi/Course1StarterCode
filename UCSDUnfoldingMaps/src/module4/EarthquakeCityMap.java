@@ -169,10 +169,10 @@ public class EarthquakeCityMap extends PApplet {
 		// and a Marker as input.  
 		// If isInCountry ever returns true, isLand should return true.
 		for (Marker m : countryMarkers) {
-			// TODO: Finish this method using the helper method isInCountry
-			
+			if (this.isInCountry(earthquake, m)) {
+				return true;
+			}
 		}
-		
 		
 		// not inside any country
 		return false;
@@ -197,6 +197,36 @@ public class EarthquakeCityMap extends PApplet {
 		//     	and (2) if it is on land, that its country property matches 
 		//      the name property of the country marker.   If so, increment
 		//      the country's counter.
+		Integer oceanQuakeCounter = null;
+		for (Marker countryMarker : countryMarkers) {
+			Integer quakeCounter = 0;
+			String name = (String)countryMarker.getProperty("name");
+			
+			oceanQuakeCounter = 0;
+			for (Marker quakeMarker : quakeMarkers) {
+				if (quakeMarker instanceof LandQuakeMarker) {
+					EarthquakeMarker em = (EarthquakeMarker) quakeMarker;
+					String country = (String) quakeMarker.getProperty("country");
+					
+					//If the marker is in te country and isOnLand increment counter
+					if (country.equals(name)) {
+						if (em.isOnLand()) {
+							quakeCounter++;
+						};
+					}
+					
+				} else {
+					oceanQuakeCounter++;
+				}
+			}
+			
+			if(quakeCounter > 0) {
+				System.out.println(name + ": "+ quakeCounter);
+			}
+			 
+		}
+		System.out.println("OCEAN QUAKES: "+ oceanQuakeCounter);
+		
 		
 		// Here is some code you will find useful:
 		// 
