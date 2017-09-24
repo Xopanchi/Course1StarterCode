@@ -132,32 +132,53 @@ public class EarthquakeCityMap extends PApplet {
 	// helper method to draw key in GUI
 	// TODO: Update this method as appropriate
 	private void addKey() {	
+		
+		int yellow = color(255,255,0);
+		int blue = color(0, 0, 255);
+		int red = color(255, 0, 0);
+		int white = color(255, 255, 255);
+		int black = color(0, 0, 0);
+		
+		
 		// Remember you can use Processing's graphics methods here
 		fill(255, 250, 240);
 		rect(25, 50, 150, 250);
 		
-		fill(0);
+		fill(black);
 		textAlign(LEFT, CENTER);
 		textSize(12);
 		text("Earthquake Key", 50, 75);
 		
-		fill(color(255, 0, 0));
+		fill(red);
 		int TRI_SIZE = 6;
 		int PLUS_MAG5_X_AXIS = 50;
 		int PLUS_MAG5_Y_AXIS = 100;
 		triangle(PLUS_MAG5_X_AXIS, PLUS_MAG5_Y_AXIS-TRI_SIZE, PLUS_MAG5_X_AXIS+TRI_SIZE, PLUS_MAG5_Y_AXIS+TRI_SIZE, PLUS_MAG5_X_AXIS-TRI_SIZE, PLUS_MAG5_Y_AXIS+TRI_SIZE);
 		
-		fill(color(255, 255, 255));
+		fill(white);
 		ellipse(50, 125, 12, 12	);
 		
-		fill(color(255, 255, 255));
+		fill(white);
 		rect(45, 145, 10, 10);
 		
-		fill(0, 0, 0);
+		//Deep
+		fill(yellow);
+		ellipse(50, 210, 12, 12);
+		fill(blue);
+		ellipse(50, 235, 12, 12);
+		fill(red);
+		ellipse(50, 260, 12, 12);
+		
+		
+		fill(black);
 		text("City Marker", 75, 100);
 		text("Land Quake", 75, 125);
 		text("Ocean Quake", 75, 150);
 		text("Size ~ Magnitude", 50, 175);
+		text("Shallow", 75, 210);
+		text("Intermediate", 75, 235);
+		text("Deep", 75, 260);
+		
 	}
 
 	
