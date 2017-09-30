@@ -51,7 +51,7 @@ public class CityMarker extends CommonMarker {
 	public void showTitle(PGraphics pg, float x, float y)
 	{
 		
-		// TODO: Implement this method
+		pg.text(this.getCity() + " - " + this.getCountry() + " - " + getPopulation(), x, y);
 	}
 	
 	
