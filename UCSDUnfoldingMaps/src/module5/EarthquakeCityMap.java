@@ -178,6 +178,8 @@ public class EarthquakeCityMap extends PApplet {
 				boolean findFirstCity = findAndShowOneCity();
 				if (findFirstCity) {
 					showQuakesInVecinity();
+				} else {
+					showAll();
 				}
 			}
 
